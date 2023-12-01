@@ -17,6 +17,10 @@ items = {}
 # Initialize FastAPI instance
 app = FastAPI()
 
+@app.get("/")
+async def say_hello():
+  return {"greeting": "Hello World!"}
+
 
 # This allows sending of data (our TaggedItem) via POST to the API.
 @app.post("/items/")
